@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ionic OCR with Tesseract
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img [src]="image"></ion-img>
+
+  <ion-button expand="full" (click)="captureImage()" shape="round">Capture Image</ion-button>
+  <ion-button expand="full" (click)="recognizeImage()" [disabled]="!workerReady" shape="round">Start OCR</ion-button>
+
+  <ion-card *ngIf="workerReady && captureProgress > 0">
+    <ion-card-header>
+      <ion-card-title>
+        Capture progress: {{ captureProgress }}%
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ ocrResult }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

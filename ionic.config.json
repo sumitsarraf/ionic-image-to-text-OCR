@@ -1,0 +1,7 @@
+{
+  "name": "ionic-ocr-tesseract",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
